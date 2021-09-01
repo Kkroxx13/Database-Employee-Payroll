@@ -29,3 +29,6 @@ insert into employee_payroll values(
 
 insert into employee_payroll values(
 'Rutuja',30000,'12/25/2021');
+
+/*UC-4_Retrieve all date from table*/
+select * from employee_payroll;
