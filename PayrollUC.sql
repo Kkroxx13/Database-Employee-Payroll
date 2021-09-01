@@ -49,3 +49,19 @@ update employee_payroll set gender='Male' where name='Bhavesh';
 update employee_payroll set gender='Female' where name='Ruchi';
 update employee_payroll set gender='Female' where name='Prajakta';
 update employee_payroll set gender='Female' where name='Rutuja';
+
+/*UC-7_Use aggregate functions */
+select gender ,sum(salary) from employee_payroll where gender='Female' group by gender;
+select gender ,sum(salary) from employee_payroll where gender='Male' group by gender;
+
+select gender ,avg(salary) from employee_payroll where gender='Female' group by gender;
+select gender ,avg(salary) from employee_payroll where gender='Male' group by gender;
+
+select gender ,min(salary) from employee_payroll where gender='Female' group by gender;
+select gender ,min(salary) from employee_payroll where gender='Male' group by gender;
+
+select gender ,max(salary) from employee_payroll where gender='Female' group by gender;
+select gender ,max(salary) from employee_payroll where gender='Male' group by gender;
+
+select gender ,count(salary) from employee_payroll where gender='Female' group by gender;
+select gender ,count(salary) from employee_payroll where gender='Male' group by gender;
