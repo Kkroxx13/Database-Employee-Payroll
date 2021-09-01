@@ -35,3 +35,17 @@ select * from employee_payroll;
 
 /*UC-5_Retrieve data from particular employee*/
 select * from employee_payroll where name='Karan';
+
+select * from employee_payroll
+WHERE startdate BETWEEN CAST('01/01/2015'
+AS DATE) AND GETDATE();
+
+/*UC-6_Add Gender column to table employee_payroll*/
+alter table employee_payroll add  gender varchar(255);
+
+update employee_payroll set gender='Male' where name='Karan';
+update employee_payroll set gender='Male' where name='Sagar';
+update employee_payroll set gender='Male' where name='Bhavesh';
+update employee_payroll set gender='Female' where name='Ruchi';
+update employee_payroll set gender='Female' where name='Prajakta';
+update employee_payroll set gender='Female' where name='Rutuja';
