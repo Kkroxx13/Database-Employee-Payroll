@@ -65,3 +65,63 @@ select gender ,max(salary) from employee_payroll where gender='Male' group by ge
 
 select gender ,count(salary) from employee_payroll where gender='Female' group by gender;
 select gender ,count(salary) from employee_payroll where gender='Male' group by gender;
+
+/*UC-8_Extend table to given format*/
+select * from employee_payroll;
+
+alter table employee_payroll
+drop column gender;
+
+alter table employee_payroll
+drop column startdate;
+
+alter table employee_payroll
+drop column salary;
+
+alter table employee_payroll
+add phone_number int default 0;
+
+alter table employee_payroll
+add address varchar(255) default 0;
+
+UPDATE employee_payroll SET address = 'Mumbai' WHERE name IN ('Karan', 'Sagar');
+UPDATE employee_payroll SET address = 'Delhi' WHERE name IN ('Bhavesh', 'Ruchi');
+UPDATE employee_payroll SET address = 'Chicago' WHERE name IN ('Prajakta', 'Rutuja');
+
+alter table employee_payroll
+add department varchar(255) default 0;
+
+select * from employee_payroll;
+
+UPDATE employee_payroll SET department = 'Backend' WHERE name IN ('Karan', 'Sagar');
+UPDATE employee_payroll SET department = 'Frontend' WHERE name IN ('Bhavesh', 'Ruchi');
+UPDATE employee_payroll SET department = 'Finance' WHERE name IN ('Prajakta', 'Rutuja');
+
+alter table employee_payroll
+add gender varchar(255) default 0;
+
+UPDATE employee_payroll SET gender = 'Male' WHERE name IN ('Karan', 'Sagar');
+UPDATE employee_payroll SET gender='Male' where name='Bhavesh';
+UPDATE employee_payroll SET gender='Female' where name='Ruchi';
+UPDATE employee_payroll SET gender = 'Female' WHERE name IN ('Prajakta', 'Rutuja');
+
+UPDATE employee_payroll SET basic_pay = '50000' WHERE name IN ('Karan', 'Sagar');
+UPDATE employee_payroll SET basic_pay = '55000' WHERE name IN ('Bhavesh', 'Ruchi');
+UPDATE employee_payroll SET basic_pay = '40000' WHERE name IN ('Prajakta', 'Rutuja');
+
+select * from employee_payroll;
+
+alter table employee_payroll
+drop column deductions;
+
+alter table employee_payroll
+add taxable_pay int not null default(0);
+
+alter table employee_payroll
+add tax int not null default(0);
+
+alter table employee_payroll
+add net_pay int not null default(0);
+
+alter table employee_payroll
+add start datetime not null default('08/02/2021');
