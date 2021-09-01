@@ -32,3 +32,6 @@ insert into employee_payroll values(
 
 /*UC-4_Retrieve all date from table*/
 select * from employee_payroll;
+
+/*UC-5_Retrieve data from particular employee*/
+select * from employee_payroll where name='Karan';
